@@ -10,7 +10,8 @@
     "lint": "eslint src --ext .ts,.vue"
   },
   "dependencies": {
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "vuesax": "^4.0.1-alpha.25"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.43.0",
