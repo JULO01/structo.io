@@ -1,0 +1,14 @@
+:root{
+	--color-primary-500: rgb(255, 214, 0);
+
+	--color-neutral-100: rgb(255, 255, 255);
+	--color-neutral-200: rgb(253, 251, 242);
+	--color-neutral-300: rgb(249, 245, 224);
+	--color-neutral-400: rgb(245, 242, 222);
+	--color-neutral-500: rgb(158, 157, 150);
+	--color-neutral-600: rgb(107, 107, 101);
+	--color-neutral-700: rgb(66, 65, 62);
+	--color-neutral-800: rgb(58, 57, 48);
+
+}
+
