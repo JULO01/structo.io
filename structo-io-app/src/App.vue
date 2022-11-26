@@ -16,4 +16,6 @@ import HelloWorld from './components/HelloWorld.vue'
   </div>
 </template>
 
-<style scoped></style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
+</style>

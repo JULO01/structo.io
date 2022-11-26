@@ -1,4 +1,6 @@
 :root{
+
+	/* global colors */
 	--color-primary-500: rgb(255, 214, 0);
 
 	--color-neutral-100: rgb(255, 255, 255);
@@ -9,6 +11,35 @@
 	--color-neutral-600: rgb(107, 107, 101);
 	--color-neutral-700: rgb(66, 65, 62);
 	--color-neutral-800: rgb(58, 57, 48);
+	--color-neutral-900: rgb(53, 53, 53);
+
+	/* font declarations */
+	--ff-primary: 'Fira Mono', monospace;
+
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-bold: 700;
+
+	--fs-400: 1rem;
+	--fs-500: 1.25rem;
+	--fs-600: 1.5rem;
+	--fs-700: 1.75rem;
+	--fs-800: 2rem;
+	--fs-900: 2.25rem;
+}
+
+
+
+
+
+/* Just tryouts  */
+body{
+	background-color: var(--color-neutral-300);
+}
+
+.dark body{
+	background-color: var(--color-neutral-900);
+
 
 }
 
