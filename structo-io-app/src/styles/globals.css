@@ -1,0 +1,73 @@
+:root{
+
+	/* global colors */
+	--color-primary-500: rgb(255, 214, 0);
+
+	--color-neutral-100: rgb(255, 255, 255);
+	--color-neutral-200: rgb(253, 251, 242);
+	--color-neutral-300: rgb(249, 245, 224);
+	--color-neutral-400: rgb(245, 242, 222);
+	--color-neutral-500: rgb(158, 157, 150);
+	--color-neutral-600: rgb(107, 107, 101);
+	--color-neutral-700: rgb(75, 75, 75);
+	--color-neutral-800: rgb(58, 57, 48);
+	--color-neutral-900: rgb(53, 53, 53);
+
+	/* sizes for padding/ margin */
+	--padding-horizontal: clamp(1rem, 3vw, 3rem);
+	--size-100: 0.5rem; 
+	--size-200: 1rem; 
+	--size-300: 1.5rem; 
+	--size-400: 2rem; 
+	--size-500: 2.5rem; 
+	--size-600: 3rem; 
+	--size-700: 3.5rem; 
+	--size-800: 4rem; 
+	--size-900: 4.5rem; 
+
+	/* font declarations */
+	--ff-primary: 'Fira Mono', monospace;
+
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-bold: 700;
+
+	--fs-400: 1rem;
+	--fs-500: 1.25rem;
+	--fs-600: 1.5rem;
+	--fs-700: 1.75rem;
+	--fs-800: 2rem;
+	--fs-900: 2.25rem;
+
+	/* font property mappings */
+	--fs-logo: var(--fs-800);
+
+	--fs-header-nav-item-active: var();
+	--fs-header-nav-item-inactive: var();
+
+	--fs-editor-tool-item: var();
+	--fs-footer-nav: var();
+
+	--fs-editor-canvas-heading: var();
+	--fs-editor-canvas-item: var();
+
+
+	/* color property mappings */
+	--app-background-light: var(--color-neutral-400);
+	--app-background-dark: var(--color-neutral-900);
+
+	--editor-canvas-background-light: var(--color-neutral-200);
+	--editor-canvas-background-dark: var(--color-neutral-700);
+
+	--editor-tool-background-light: var(--color-neutral-300);
+	--editor-tool-background-dark: var(--color-neutral-600);
+
+	--color-text-active-light: var(--color-neutral-900);
+	--color-text-active-dark: var(--color-neutral-100);
+
+	--color-text-inactive-light: var(--color-neutral-600);
+	--color-text-inactive-dark: var(--color-neutral-100);
+}
+
+
+
