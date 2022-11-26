@@ -1,13 +1,7 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <header>
     <div class="header-container">
-      <div style="text-align: center; height: 2rem">ddjfadsf/div</div>
+      <AppHeader />
     </div>
   </header>
   <main>
@@ -17,6 +11,10 @@ import HelloWorld from './components/HelloWorld.vue'
     <div style="height: 2rem">akdfjklajfkldsjf</div>
   </footer>
 </template>
+
+<script setup lang="ts">
+import AppHeader from './components/AppHeader.vue'
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
@@ -32,8 +30,6 @@ import HelloWorld from './components/HelloWorld.vue'
   left: var(--padding-horizontal);
   right: var(--padding-horizontal);
   max-height: var(--height);
-
-  background-color: red;
 }
 
 .footer-container {
@@ -44,7 +40,6 @@ import HelloWorld from './components/HelloWorld.vue'
   left: var(--padding-horizontal);
   right: var(--padding-horizontal);
   bottom: var(--margin-bottom);
-  background-color: red;
 }
 
 .main-container {
@@ -57,7 +52,5 @@ import HelloWorld from './components/HelloWorld.vue'
   top: var(--margin-vertical);
   bottom: var(--margin-vertical);
   height: fit-content;
-
-  background-color: aliceblue;
 }
 </style>

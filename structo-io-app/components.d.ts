@@ -7,6 +7,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AppHeader: typeof import('./src/components/AppHeader.vue')['default']
+    AppHeaderActions: typeof import('./src/components/AppHeaderActions.vue')['default']
+    AppHeaderNav: typeof import('./src/components/AppHeaderNav.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     VanButton: typeof import('vant/es')['Button']
   }
