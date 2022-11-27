@@ -2,7 +2,9 @@
   <div class="actions-container">
     <BaseIcon name="export" size="28px" />
     <BaseIcon name="add" size="36px" />
-    <BaseIcon name="darkMode" size="28px" @click="toggleDark()" />
+    <BaseIcon v-if="isDark" name="lightMode" size="28px" @click="toggleDark()" />
+    <!-- TODO: add animation for the icon change-->
+    <BaseIcon v-else name="darkMode" size="28px" @click="toggleDark()" />
   </div>
 </template>
 <script setup lang="ts">

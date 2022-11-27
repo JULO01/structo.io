@@ -1,6 +1,6 @@
 <template>
   <div class="footer-container">
-    <a href="https://www.paypal.com/pools/c/8PmAPBMmMW" target="_blank" class="footer-item"><img src="../assets/images/hot-beverage.png" class="footer-link-image" />Buy me a coffee</a>
+    <a href="https://www.paypal.com/pools/c/8PmAPBMmMW" target="_blank" class="footer-item"><img src="../assets/images/coffee.png" class="footer-link-image" />Buy me a coffee</a>
   </div>
 </template>
 <script setup lang="ts"></script>

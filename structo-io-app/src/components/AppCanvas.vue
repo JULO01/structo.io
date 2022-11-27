@@ -1,16 +1,21 @@
 <template>
   <div class="canvas-container">
     <div class="canvas-sidebar">
-      <div class="test-item"></div>
-      <div class="test-item"></div>
-      <div class="test-item"></div>
-      <div class="test-item"></div>
-      <div class="test-item"></div>
-      <div class="test-item"></div>
+      <CanvasSidebarItem />
+      <CanvasSidebarItem />
+      <CanvasSidebarItem />
+      <CanvasSidebarItem />
+      <CanvasSidebarItem />
     </div>
-    <div class="canvas"></div>
+    <div class="canvas">
+      <BaseEmptyContent url="src/assets/svg/drag.svg" display-text="Drag a node inside to get started!" alt="TODO: entfern mich" />
+    </div>
   </div>
 </template>
+<script setup lang="ts">
+import BaseEmptyContent from './BaseEmptyContent.vue'
+import CanvasSidebarItem from './CanvasSidebarItem.vue'
+</script>
 <style scoped>
 html:not(.dark) .canvas {
   background-color: var(--editor-canvas-background-light);
@@ -30,7 +35,6 @@ html.dark .canvas {
 }
 
 .canvas {
-  display: flex;
   border-radius: 25px;
   box-shadow: var(--box-shadow-200);
 }
@@ -43,11 +47,5 @@ html.dark .canvas {
   position: absolute;
   top: 0;
   bottom: 0;
-}
-
-.test-item {
-  width: 6rem;
-  height: 3rem;
-  background-color: aliceblue;
 }
 </style>

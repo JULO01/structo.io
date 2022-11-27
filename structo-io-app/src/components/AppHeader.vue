@@ -15,6 +15,7 @@ import HeaderNav from './HeaderNav.vue'
 .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .app-logo {
   font-size: var(--fs-logo);
