@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <a class="app-logo" href="#">Structo.io</a>
-    <AppHeaderNav />
-    <AppHeaderActions />
+    <a class="app-logo header-item" href="#">Structo.io</a>
+    <HeaderNav class="header-nav header-item" />
+    <HeaderActions class="header-item" />
   </div>
 </template>
 
 <script setup lang="ts">
-import AppHeaderActions from './AppHeaderActions.vue'
-import AppHeaderNav from './AppHeaderNav.vue'
+import HeaderActions from './HeaderActions.vue'
+import HeaderNav from './HeaderNav.vue'
 </script>
 
 <style scoped>
@@ -16,8 +16,10 @@ import AppHeaderNav from './AppHeaderNav.vue'
   display: flex;
   justify-content: space-between;
 }
-
 .app-logo {
   font-size: var(--fs-logo);
+}
+.header-item {
+  flex: 1;
 }
 </style>

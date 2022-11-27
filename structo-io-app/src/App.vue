@@ -5,15 +5,17 @@
     </div>
   </header>
   <main>
-    <div class="main-container"></div>
+    <div class="main-container"><AppCanvas /></div>
   </main>
   <footer class="footer-container">
-    <div style="height: 2rem">akdfjklajfkldsjf</div>
+    <AppFooter />
   </footer>
 </template>
 
 <script setup lang="ts">
 import AppHeader from './components/AppHeader.vue'
+import AppFooter from './components/AppFooter.vue'
+import AppCanvas from './components/AppCanvas.vue'
 </script>
 
 <style>
@@ -46,11 +48,12 @@ import AppHeader from './components/AppHeader.vue'
   --margin-vertical: clamp(4rem, 15vh, 5rem);
   --margin-bottom: 7.75rem;
 
+  display: grid;
+
   position: fixed;
   left: var(--padding-horizontal);
   right: var(--padding-horizontal);
   top: var(--margin-vertical);
   bottom: var(--margin-vertical);
-  height: fit-content;
 }
 </style>

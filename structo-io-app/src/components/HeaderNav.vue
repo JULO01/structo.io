@@ -22,9 +22,11 @@ const emit = defineEmits(['update:navIndex'])
 
 <style scoped>
 .nav-container {
+  width: 100%;
+  justify-content: center;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1rem, 2vw, 2rem);
 }
 
 .nav-item-active {
@@ -50,6 +52,6 @@ const emit = defineEmits(['update:navIndex'])
   width: 100%;
   height: 0.2rem;
   border-radius: 0.5rem;
-  background-color: var(--color-primary-500);
+  background-color: rgb(var(--color-primary-500));
 }
 </style>

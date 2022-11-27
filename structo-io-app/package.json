@@ -10,6 +10,7 @@
     "lint": "eslint src --ext .ts,.vue"
   },
   "dependencies": {
+    "@vueuse/core": "^9.6.0",
     "vant": "^3.6.5",
     "vue": "^3.2.41"
   },
