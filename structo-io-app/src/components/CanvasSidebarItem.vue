@@ -1,10 +1,59 @@
 <template>
   <div class="item-container">
-    <div class="item" draggable="true"></div>
+    <div class="item" ref="elementToMove" draggable="true" @touchstart.prevent="handleTouchStart" @touchmove.prevent="handleTouchMove" @touchend.prevent="handleTouchEnd"></div>
     <div class="item-title">do-while</div>
   </div>
 </template>
-<script setup lang="ts"></script>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+const elementToMove = ref<HTMLElement>()
+let initialX = ''
+let initialY = ''
+
+function handleTouchStart(event: any) {
+  if (!elementToMove.value) return
+  initialX = elementToMove.value.style.left
+  initialY = elementToMove.value.style.top
+
+  elementToMove.value.style.position = 'fixed'
+  elementToMove.value.style.transitionDuration = 'initial'
+}
+
+function handleTouchMove(event: any) {
+  if (!elementToMove.value) return
+
+  const touchLocation = event.targetTouches[0]
+  elementToMove.value.style.left = touchLocation.pageX - 56 + 'px'
+  elementToMove.value.style.top = touchLocation.pageY - 32 + 'px'
+}
+
+function handleTouchEnd(event: any) {
+  if (!elementToMove.value) return
+
+  elementToMove.value.style.position = 'initial'
+  elementToMove.value.style.left = initialX
+  elementToMove.value.style.top = initialY
+}
+
+/*function handleTouchStart(event: any) {
+  if (!elementToMove.value) return
+  console.log(event)
+}*/
+
+/*function handleTouchMove(event: any) {
+  if (!elementToMove.value) return
+  if (event.clientX) {
+    // mousemove
+    moving.style.left = event.clientX - moving.clientWidth / 2
+    moving.style.top = event.clientY - moving.clientHeight / 2
+  } else {
+    // touchmove - assuming a single touchpoint
+    moving.style.left = event.changedTouches[0].clientX - moving.clientWidth / 2
+    moving.style.top = event.changedTouches[0].clientY - moving.clientHeight / 2
+  }
+}*/
+</script>
 <style scoped>
 .item-container {
   width: fit-content;
