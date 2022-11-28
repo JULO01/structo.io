@@ -1,16 +1,8 @@
 export default {}
 
-const testType = {
-  root: {
-    type: 'whileDo',
-    condition: 'for i in rsdfadfljk',
-    child: {},
-  },
-}
-
 type Node = Statement | WhileDo | DoWhile | IfElse | SwitchCase | MethodBlock
 
-enum NodeType {
+export enum NodeType {
   Statement = 'Statement',
   WhileDo = 'WhileDo',
   DoWhile = 'DoWhile',
@@ -24,39 +16,46 @@ type Argument = {
   child: Node
 }
 
-type NodeBase = {
+export type NodeBase = {
   type: NodeType
   id: string
+  hasDropZone: boolean
 }
 
-type Statement = NodeBase & {
+export type Statement = NodeBase & {
   type: NodeType.Statement
   argument: Argument
+  hasDropZone: false
 }
 
-type WhileDo = NodeBase & {
+export type WhileDo = NodeBase & {
   type: NodeType.WhileDo
   argument: Argument
+  hasDropZone: true
 }
 
-type DoWhile = NodeBase & {
+export type DoWhile = NodeBase & {
   type: NodeType.DoWhile
   argument: Argument
+  hasDropZone: true
 }
 
-type IfElse = {
+export type IfElse = {
   type: NodeType.IfElse
   topCondition: string
   arguments: Argument[]
+  hasDropZone: true
 }
 
-type SwitchCase = NodeBase & {
+export type SwitchCase = NodeBase & {
   type: NodeType.SwitchCase
   topCondition: string
   arguments: Argument[]
+  hasDropZone: true
 }
 
-type MethodBlock = NodeBase & {
+export type MethodBlock = NodeBase & {
   type: NodeType.MethodBlock
   argument: Argument
+  hasDropZone: false
 }
