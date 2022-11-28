@@ -1,35 +1,28 @@
 <template>
-  <div ref="elementContainer" class="item-container">
+  <div class="item-container">
     <div class="item" ref="elementToMove" draggable="true" @touchstart.prevent="handleTouchStart" @touchmove.prevent="handleTouchMove" @touchend.prevent="handleTouchEnd"></div>
-    <div class="item-title">do-while</div>
+    <div ref="itemTitle" class="item-title">do-while</div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 const elementToMove = ref<HTMLElement>()
-const elementContainer = ref<HTMLElement>()
-const cloneNode = ref<Node>()
+const itemTitle = ref<HTMLElement>()
 
 let initialX = ''
 let initialY = ''
 
 function handleTouchStart(event: any) {
   if (!elementToMove.value) return
-  if (!elementContainer.value) return
-
-  cloneNode.value = elementContainer.value.cloneNode(true)
-  elementContainer.value.after(cloneNode.value)
-  cloneNode.value.classList.add('transparent')
-  setTimeout(() => {
-    if (!cloneNode.value) return
-    cloneNode.value.classList.add('disappear')
-  }, 10)
 
   initialX = elementToMove.value.style.left
   initialY = elementToMove.value.style.top
 
   elementToMove.value.style.position = 'fixed'
+
+  if (!itemTitle.value) return
+  itemTitle.value.classList.add('hidden')
 }
 
 function handleTouchMove(event: any) {
@@ -48,6 +41,9 @@ function handleTouchEnd(event: any) {
   elementToMove.value.style.position = 'initial'
   elementToMove.value.style.left = initialX
   elementToMove.value.style.top = initialY
+
+  if (!itemTitle.value) return
+  itemTitle.value.classList.remove('hidden')
 }
 </script>
 <style scoped>
@@ -57,7 +53,6 @@ function handleTouchEnd(event: any) {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
-  transition: all 1s linear;
 }
 html:not(.dark) .item {
   background-color: var(--editor-tool-background-light);
@@ -89,20 +84,7 @@ html.dark .item {
   align-self: center;
   font-size: var(--fs-editor-tool-item);
 }
-.transparent {
-  background-color: rgba(0, 0, 0, 0);
-  color: rgba(0, 0, 0, 0);
-  box-shadow: none;
-}
-.transparent * {
-  background-color: rgba(0, 0, 0, 0);
-  color: rgba(0, 0, 0, 0);
-  box-shadow: none;
-}
-.disappear * {
-  height: 0px;
-}
-.item-container.disappear {
-  height: 0px;
+.hidden {
+  display: none;
 }
 </style>

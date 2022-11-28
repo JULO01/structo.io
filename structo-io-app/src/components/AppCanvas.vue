@@ -6,14 +6,17 @@
       <CanvasSidebarItem />
       <CanvasSidebarItem />
       <CanvasSidebarItem />
+      <CanvasSidebarItem />
     </div>
     <div class="canvas">
-      <BaseEmptyContent url="src/assets/svg/drag.svg" display-text="Drag a node inside to get started!" alt="TODO: entfern mich" />
+      <BaseEmptyContent v-if="false" url="src/assets/svg/drag.svg" display-text="Drag a node inside to get started!" alt="TODO: entfern mich" />
+      <CanvasItemWhileDo />
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import BaseEmptyContent from './BaseEmptyContent.vue'
+import CanvasItemWhileDo from './CanvasItemWhileDo.vue'
 import CanvasSidebarItem from './CanvasSidebarItem.vue'
 </script>
 <style scoped>
@@ -32,11 +35,17 @@ html.dark .canvas {
   padding-left: var(--padding-horizontal);
   padding-right: var(--padding-horizontal);
   display: grid;
+  flex-flow: column;
+  height: 100%;
 }
 
 .canvas {
   border-radius: 25px;
   box-shadow: var(--box-shadow-200);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .canvas-sidebar {
