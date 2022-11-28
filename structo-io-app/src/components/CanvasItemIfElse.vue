@@ -56,11 +56,15 @@ html.dark .item-childzone:hover {
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
-  background-image: url('data:image/svg+xml;charset=UTF-8, <svg preserveAspectRatio="none" viewBox="0 0 331 102" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0.519784" y1="0.145702" x2="166.52" y2="101.146" stroke="black" stroke-width="2"/><line x1="329.523" y1="0.852376" x2="166.523" y2="100.852" stroke="black" stroke-width="2"/></svg>');
-  background-size: 100% 100%;
-  background-color: red;
 }
-
+html:not(.dark) .item-argument-container {
+  background-image: url('data:image/svg+xml;charset=UTF-8, <svg preserveAspectRatio="none" viewBox="0 0 331 102" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0.519784" y1="0.145702" x2="166.52" y2="101.146" stroke="rgb(53, 53, 53)" stroke-width="2"/><line x1="329.523" y1="0.852376" x2="166.523" y2="100.852" stroke="rgb(53, 53, 53)" stroke-width="2"/></svg>');
+  background-size: 100% 100%;
+}
+html.dark .item-argument-container {
+  background-image: url('data:image/svg+xml;charset=UTF-8, <svg preserveAspectRatio="none" viewBox="0 0 331 102" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0.519784" y1="0.145702" x2="166.52" y2="101.146" stroke="rgba(256, 256, 256, 0.9)" stroke-width="2"/><line x1="329.523" y1="0.852376" x2="166.523" y2="100.852" stroke="rgba(256, 256, 256, 0.9)" stroke-width="2"/></svg>');
+  background-size: 100% 100%;
+}
 .item-argument {
   min-height: 2rem;
   background-color: blue;
