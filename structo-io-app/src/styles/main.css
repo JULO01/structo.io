@@ -18,3 +18,21 @@ img[data-key='icon'] {
   height: var(--size-800);
   width: var(--size-800);
 }
+
+/*  utilities need to be fixed  */
+/*.html:not(.dark) .canvas-item-container {
+  border: 2px solid var(--color-text-active-light);
+}
+
+.html.dark .canvas-item-container {
+  border: 2px solid var(--color-text-active-dark);
+}
+
+html:not(.dark) .canvas-item-childzone {
+  border: 2px solid var(--color-text-active-light);
+}
+
+html.dark .canvas-item-childzone {
+  border: 2px solid var(--color-text-active-dark);
+}
+*/

@@ -10,13 +10,15 @@
     </div>
     <div class="canvas">
       <BaseEmptyContent v-if="false" url="src/assets/svg/drag.svg" display-text="Drag a node inside to get started!" alt="TODO: entfern mich" />
-      <CanvasItemWhileDo />
+      <CanvasItemIfElse />
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import BaseEmptyContent from './BaseEmptyContent.vue'
+import CanvasItemDoWhile from './CanvasItemDoWhile.vue'
 import CanvasItemWhileDo from './CanvasItemWhileDo.vue'
+import CanvasItemIfElse from './CanvasItemIfElse.vue'
 import CanvasSidebarItem from './CanvasSidebarItem.vue'
 </script>
 <style scoped>

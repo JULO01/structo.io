@@ -32,7 +32,6 @@ html:not(.dark) .item-childzone:hover {
   min-width: 22vw;
   height: fit-content;
   width: fit-content;
-
   display: flex;
   flex-direction: column;
 }
