@@ -4,15 +4,12 @@
     <div class="item-argument-right-triangle">
       <!-- <div class="test-argument"></div>-->
     </div>
-    <div class="item-childzone-container">
-      <!--<div v-for="item in testItems" :key="item" class="item-childzone-case">
-        <div class="item-childzone-case-argument"></div>
-        <div class="item-childzone-case-child"></div>
-      </div> 
+    <div class="item-childzone-if"><div class="example-child"></div></div>
+    <div class="item-childzone-else"><div class="example-child"></div></div>
+    <!--<div v-for="item in testItems" :key="item" class="item-childzone-case"> </div>
       <div class="item-childzone-else">
         <div class="item-childzone-else-child"></div>
       </div> -->
-    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -103,6 +100,31 @@ html.dark .item-childzone:hover {
   grid-column-end: 2;
   grid-row: 2;
   width: 200%;
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+}
+.item-childzone-if {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row: 2;
+  min-width: 3rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+.item-childzone-else {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row: 2;
+  width: 3rem;
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+}
+
+.example-child {
+  width: 2rem;
   background-color: green;
 }
 </style>
