@@ -10,8 +10,8 @@
 <style scoped>
 .item-container {
   border-radius: 10px;
-  min-height: 10vh;
-  min-width: 15vw;
+  min-height: var(--min-height-editor-item);
+  min-width: var(--min-width-editor-item);
   height: fit-content;
   width: fit-content;
 
@@ -44,21 +44,22 @@ html:not(.dark) .item-childzone:hover {
   margin-bottom: -2px;
   margin-right: -2px;
   height: fit-content;
-  min-height: 80%;
+  min-height: var(--min-gtheight-editor-item-childzone);
   align-self: flex-end;
   width: fit-content;
   min-width: 80%;
   margin-left: 2rem;
+  margin-top: auto;
 
   border-radius: 10px;
 }
 .item-argument {
-  min-height: 2rem;
+  min-height: var(--min-height-editor-argument);
   height: fit-content;
 }
 .example-child {
-  width: 60rem;
-  height: 30rem;
+  width: 10rem;
+  height: 3rem;
   border: 1px solid cyan;
 }
 </style>

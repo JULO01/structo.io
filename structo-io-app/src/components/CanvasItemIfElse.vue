@@ -48,7 +48,7 @@ html.dark .item-childzone:hover {
 }
 .item-argument-container {
   height: fit-content;
-  min-height: 5rem;
+  min-height: var(--min-height-editor-argument);
   position: relative;
 
   display: flex;
@@ -67,18 +67,18 @@ html.dark .item-argument-container {
 }
 .item-argument {
   min-height: 2rem;
-  background-color: blue;
   height: fit-content;
 }
 .item-argument-if-display {
-  width: 50%;
+  width: 60%;
 }
 .item-argument-else-display {
+  width: 40%;
 }
 .item-container {
   border-radius: 10px;
-  min-height: 18vh;
-  min-width: 22vw;
+  min-height: var(--min-height-editor-item);
+  min-width: var(--min-width-editor-item);
   height: fit-content;
   width: fit-content;
 
@@ -86,7 +86,8 @@ html.dark .item-argument-container {
   flex-direction: column;
 }
 .item-childzone-container {
-  min-height: 6rem;
+  min-height: var(--min-height-editor-childzone) jG;
+  min-height: inherit;
   height: fit-content;
   display: flex;
   justify-content: center;

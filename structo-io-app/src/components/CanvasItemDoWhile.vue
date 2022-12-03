@@ -28,8 +28,8 @@ html:not(.dark) .item-childzone:hover {
 }
 .item-container {
   border-radius: 10px;
-  min-height: 18vh;
-  min-width: 22vw;
+  min-height: var(--min-height-editor-item);
+  min-width: var(--min-width-editor-item);
   height: fit-content;
   width: fit-content;
   display: flex;
@@ -42,7 +42,7 @@ html:not(.dark) .item-childzone:hover {
   margin-top: -2px;
   margin-right: -2px;
   height: fit-content;
-  min-height: 80%;
+  min-height: var(--min-height-editor-item-childzone);
   align-self: flex-end;
   width: fit-content;
   min-width: 90%;
@@ -51,7 +51,7 @@ html:not(.dark) .item-childzone:hover {
   border-radius: 10px;
 }
 .item-argument {
-  min-height: 2rem;
+  min-height: var(--min-height-editor-argument);
   height: fit-content;
 }
 .example-child {

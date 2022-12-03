@@ -16,6 +16,10 @@
 
   /* sizes for padding/ margin */
   --padding-horizontal: clamp(1rem, 3vw, 3rem);
+  --min-width-editor-item: clamp(6rem, 22vw, 20rem);
+  --min-height-editor-item: clamp(5rem, 18vw, 20rem);
+  --min-height-editor-argument: clamp(2rem, 13vw, 5rem);
+  --min-height-editor-childzone: clamp(2rem, 14vw, 6rem);
   --size-100: 0.5rem;
   --size-200: 1rem;
   --size-300: 1.5rem;
