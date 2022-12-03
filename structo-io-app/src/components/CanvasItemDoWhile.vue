@@ -8,55 +8,29 @@
 </template>
 <script setup lang="ts"></script>
 <style scoped>
-html:not(.dark) .item-container {
-  border: 2px solid var(--color-text-active-light);
-}
-html:not(.dark) .item-childzone {
-  border: 2px solid var(--color-text-active-light);
-}
-html.dark .item-container {
-  border: 2px solid var(--color-text-active-dark);
-}
-html.dark .item-childzone {
-  border: 2px solid var(--color-text-active-dark);
-}
-html.dark .item-childzone:hover {
-  border: 2px solid var(--color-primary);
-}
-html:not(.dark) .item-childzone:hover {
-  border: 2px solid var(--color-primary);
-}
 .item-container {
   border-radius: 10px;
-  min-height: var(--min-height-editor-item);
   min-width: var(--min-width-editor-item);
   height: fit-content;
   width: fit-content;
   display: flex;
   flex-direction: column;
+  padding-left: 1.5rem;
 }
 .item-childzone {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: -2px;
+  margin-top: -1px;
   margin-right: -2px;
-  height: fit-content;
-  min-height: var(--min-height-editor-item-childzone);
+  min-height: var(--min-height-editor-childzone);
   align-self: flex-end;
   width: fit-content;
-  min-width: 90%;
-  margin-left: 2rem;
-
+  min-width: 100%;
   border-radius: 10px;
 }
 .item-argument {
   min-height: var(--min-height-editor-argument);
   height: fit-content;
-}
-.example-child {
-  width: 10rem;
-  height: 10rem;
-  border: 1px solid cyan;
 }
 </style>
