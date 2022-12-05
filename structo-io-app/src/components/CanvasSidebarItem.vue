@@ -1,5 +1,5 @@
 <template>
-  <div class="item-container">
+  <div class="sidebar-item-container">
     <div class="item" ref="elementToMove" draggable="true" @touchstart.prevent="handleTouchStart" @touchmove.prevent="handleTouchMove" @touchend.prevent="handleTouchEnd"></div>
     <div ref="itemTitle" class="item-title">do-while</div>
   </div>
@@ -47,7 +47,7 @@ function handleTouchEnd(event: any) {
 }
 </script>
 <style scoped>
-.item-container {
+.sidebar-item-container {
   width: fit-content;
   display: flex;
   flex-direction: column;
