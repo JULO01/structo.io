@@ -6,12 +6,60 @@
       <div class="item-argument-else-display">Else</div>
     </div>
     <div class="item-childzone-container">
-      <div class="item-childzone-if"></div>
-      <div class="item-childzone-else"></div>
+      <div class="item-childzone-if" @drop.prevent="handleIfDrop" @dragenter.prevent @dragover.prevent>
+        <component v-if="requiredIfComponent != null" :is="requiredIfComponent"></component>
+      </div>
+      <div class="item-childzone-else" @drop.prevent="handleElseDrop" @dragenter.prevent @dragover.prevent>
+        <component v-if="requiredElseComponent != null" :is="requiredElseComponent"></component>
+      </div>
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+import { NodeType } from '../types/nodes'
+// import canvasItems from '../utils/canvasItems'
+import CanvasItemDoWhile from './CanvasItemDoWhile.vue'
+import CanvasItemMethodBlock from './CanvasItemMethodBlock.vue'
+import CanvasItemStatement from './CanvasItemStatement.vue'
+import CanvasItemSwitchCase from './CanvasItemSwitchCase.vue'
+import CanvasItemWhileDo from './CanvasItemWhileDo.vue'
+import CanvasItemIfElse from './CanvasItemIfElse.vue'
+
+const canvasItems = {
+  'do-while': CanvasItemDoWhile,
+  'method-block': CanvasItemMethodBlock,
+  statement: CanvasItemStatement,
+  'switch-case': CanvasItemSwitchCase,
+  'while-do': CanvasItemWhileDo,
+  'if-else': CanvasItemIfElse,
+}
+
+const ifChildType = ref<NodeType>()
+const elseChildType = ref<NodeType>()
+
+const requiredIfComponent = computed(() => {
+  if (!ifChildType.value) return null
+  return canvasItems[ifChildType.value]
+})
+
+const requiredElseComponent = computed(() => {
+  if (!elseChildType.value) return null
+  return canvasItems[elseChildType.value]
+})
+
+function handleIfDrop(event: DragEvent) {
+  if (ifChildType.value) return
+  const childType = event.dataTransfer?.getData('text/plain') as NodeType
+  ifChildType.value = childType
+}
+
+function handleElseDrop(event: DragEvent) {
+  if (elseChildType.value) return
+  const childType = event.dataTransfer?.getData('text/plain') as NodeType
+  elseChildType.value = childType
+}
+</script>
 <style scoped>
 .item-argument-container {
   height: fit-content;
@@ -71,18 +119,20 @@
 .item-childzone-if::after {
   content: '';
   height: 100%;
-  border-right: 2px solid black;
+  border-right: 2px solid;
   margin-right: -2px;
+}
+html:not(.dark) .item-childzone-if::after {
+  border-left: 2px solid var(--color-text-active-light);
+}
+html.dark .item-childzone-if::after {
+  border-left: 2px solid var(--color-text-active-dark);
 }
 .item-childzone-else {
   grid-row: 1 / 1;
   grid-column: 2 / 2;
   display: flex;
   flex-direction: column;
-}
-.item-childzone-divider {
-  width: 2px;
-  background-color: aliceblue;
 }
 html.dark .item-childzone-divider {
   background-color: var(--color-text-active-dark);
