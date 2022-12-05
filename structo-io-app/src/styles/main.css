@@ -19,20 +19,37 @@ img[data-key='icon'] {
   width: var(--size-800);
 }
 
-/*  utilities need to be fixed  */
-/*.html:not(.dark) .canvas-item-container {
-  border: 2px solid var(--color-text-active-light);
+html:not(.dark) .canvas {
+  background-color: var(--editor-canvas-background-light);
+}
+html.dark .canvas {
+  background-color: var(--editor-canvas-background-dark);
 }
 
-.html.dark .canvas-item-container {
+html:not(.dark) .item-container,
+.item-childzone {
+  border: 2px solid var(--color-text-active-light);
+}
+html.dark .item-childzone,
+.item-container {
+  border: 2px solid var(--color-text-active-dark);
+}
+.item-childzone:hover {
+  border: 2px solid var(--color-primary);
+}
+
+html:not(.dark) .item-argument-container[data-colored] {
+  border: 2px solid var(--color-text-active-light);
+}
+html.dark .item-argument-container[data-colored] {
   border: 2px solid var(--color-text-active-dark);
 }
 
-html:not(.dark) .canvas-item-childzone {
-  border: 2px solid var(--color-text-active-light);
+html:not(.dark) .triangle-background {
+  background-image: url('data:image/svg+xml;charset=UTF-8, <svg preserveAspectRatio="none" viewBox="0 0 331 102" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0.519784" y1="0.145702" x2="166.52" y2="101.146" stroke="rgb(53, 53, 53)" stroke-width="4"/><line x1="329.523" y1="0.852376" x2="166.523" y2="100.852" stroke="rgb(53, 53, 53)" stroke-width="4"/></svg>');
+  background-size: 100% 100%;
 }
-
-html.dark .canvas-item-childzone {
-  border: 2px solid var(--color-text-active-dark);
+html.dark .triangle-background {
+  background-image: url('data:image/svg+xml;charset=UTF-8, <svg preserveAspectRatio="none" viewBox="0 0 331 102" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0.519784" y1="0.145702" x2="166.52" y2="101.146" stroke="rgba(256, 256, 256, 0.9)" stroke-width="4"/><line x1="329.523" y1="0.852376" x2="166.523" y2="100.852" stroke="rgba(256, 256, 256, 0.9)" stroke-width="4"/></svg>');
+  background-size: 100% 100%;
 }
-*/

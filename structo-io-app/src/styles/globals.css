@@ -18,8 +18,10 @@
   --padding-horizontal: clamp(1rem, 3vw, 3rem);
   --min-width-editor-item: clamp(6rem, 22vw, 20rem);
   --min-height-editor-item: clamp(5rem, 18vw, 20rem);
-  --min-height-editor-argument: clamp(2rem, 13vw, 5rem);
-  --min-height-editor-childzone: clamp(2rem, 14vw, 6rem);
+  --min-height-editor-argument: clamp(2rem, 13vh, 5rem);
+  --min-height-editor-childzone: clamp(2rem, 14vh, 6rem);
+  --min-width-block-item: clamp(2rem, 16vw, 6rem);
+  --switch-case-upper-row-height: clamp(2.5rem, 10vw, 12rem);
   --size-100: 0.5rem;
   --size-200: 1rem;
   --size-300: 1.5rem;
@@ -57,7 +59,7 @@
   --fs-footer-nav: var(--fs-300);
 
   --fs-editor-canvas-heading: var(--fs-400);
-  --fs-editor-canvas-item: var();
+  --fs-editor-canvas-item: var(--fs-300);
 
   /* shadows for different layers */
   --box-shadow-200: 0px 5px 6px 2px rgba(0, 0, 0, 0.25);
