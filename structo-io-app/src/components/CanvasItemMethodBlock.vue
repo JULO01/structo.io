@@ -1,7 +1,9 @@
 <template>
   <div class="method-item-container">
     <div class="item-statement"></div>
-    <div class="item-childzone"></div>
+    <div class="item-childzone">
+      <div class="example-child"></div>
+    </div>
   </div>
 </template>
 <script setup lang="ts"></script>
@@ -37,5 +39,6 @@
 }
 .item-childzone {
   border: none;
+  /*TODO: etwas für dynamische childzones überlegen*/
 }
 </style>
