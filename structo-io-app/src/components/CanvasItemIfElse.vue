@@ -7,7 +7,6 @@
     </div>
     <div class="item-childzone-container">
       <div class="item-childzone-if"></div>
-      <div class="item-childzone-divider"></div>
       <div class="item-childzone-else"></div>
     </div>
   </div>
@@ -24,15 +23,16 @@
   border-right: none !important;
 }
 .item-argument {
+  font-size: var(--fs-editor-canvas-item);
   min-height: 2rem;
   width: 33%;
-  background-color: red;
   height: fit-content;
   display: flex;
   align-content: flex-end;
   justify-content: center;
 }
 .item-argument-if-display {
+  font-size: var(--fs-editor-canvas-item);
   text-align: center;
   width: 33%;
   display: flex;
@@ -40,6 +40,7 @@
   justify-content: flex-start;
 }
 .item-argument-else-display {
+  font-size: var(--fs-editor-canvas-item);
   width: 33%;
   text-align: center;
 }
@@ -54,11 +55,30 @@
   flex-direction: column;
 }
 .item-childzone-container {
-  min-height: var(--min-height-editor-childzone) jG;
+  min-height: var(--min-height-editor-childzone);
   min-height: inherit;
   height: fit-content;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
+}
+.item-childzone-if {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  display: flex;
+  flex-direction: column;
+}
+.item-childzone-if::after {
+  content: '';
+  height: 100%;
+  border-right: 2px solid black;
+  margin-right: -2px;
+}
+.item-childzone-else {
+  grid-row: 1 / 1;
+  grid-column: 2 / 2;
+  display: flex;
+  flex-direction: column;
 }
 .item-childzone-divider {
   width: 2px;
@@ -71,18 +91,8 @@ html:not(.dark) .item-childzone-divider {
   background-color: var(--color-text-active-light);
 }
 .example-child {
-  width: 10rem;
+  width: 5rem;
   height: 10rem;
   border: 1px solid cyan;
-}
-.test-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.test-svg-2 {
-  position: absolute;
-  left: 50%;
-  top: 0;
 }
 </style>
