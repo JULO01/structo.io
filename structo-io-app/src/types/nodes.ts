@@ -2,14 +2,7 @@ export default {}
 
 type Node = Statement | WhileDo | DoWhile | IfElse | SwitchCase | MethodBlock
 
-export enum NodeType {
-  Statement = 'Statement',
-  WhileDo = 'WhileDo',
-  DoWhile = 'DoWhile',
-  IfElse = 'IfElse',
-  SwitchCase = 'SwitchCase',
-  MethodBlock = 'MethodBlock',
-}
+export type NodeType = 'statement' | 'while-do' | 'do-while' | 'if-else' | 'switch-case' | 'method-block'
 
 type Argument = {
   condition: string
@@ -23,39 +16,39 @@ export type NodeBase = {
 }
 
 export type Statement = NodeBase & {
-  type: NodeType.Statement
+  type: 'statement'
   argument: Argument
   hasDropZone: false
 }
 
 export type WhileDo = NodeBase & {
-  type: NodeType.WhileDo
+  type: 'while-do'
   argument: Argument
   hasDropZone: true
 }
 
 export type DoWhile = NodeBase & {
-  type: NodeType.DoWhile
+  type: 'do-while'
   argument: Argument
   hasDropZone: true
 }
 
 export type IfElse = {
-  type: NodeType.IfElse
+  type: 'if-else'
   topCondition: string
   arguments: Argument[]
   hasDropZone: true
 }
 
 export type SwitchCase = NodeBase & {
-  type: NodeType.SwitchCase
+  type: 'switch-case'
   topCondition: string
   arguments: Argument[]
   hasDropZone: true
 }
 
 export type MethodBlock = NodeBase & {
-  type: NodeType.MethodBlock
+  type: 'method-block'
   argument: Argument
   hasDropZone: false
 }
