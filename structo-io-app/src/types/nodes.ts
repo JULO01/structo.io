@@ -2,53 +2,50 @@ export default {}
 
 type Node = Statement | WhileDo | DoWhile | IfElse | SwitchCase | MethodBlock
 
-export type NodeType = 'statement' | 'while-do' | 'do-while' | 'if-else' | 'switch-case' | 'method-block'
-
-type Argument = {
-  condition: string
-  child: Node
+type Case = {
+  caseText: string
+  caseChild: Node
 }
+
+export type NodeType = 'statement' | 'while-do' | 'do-while' | 'if-else' | 'switch-case' | 'method-block'
 
 export type NodeBase = {
   type: NodeType
   id: string
-  hasDropZone: boolean
+  elementAfter: Node
 }
 
 export type Statement = NodeBase & {
   type: 'statement'
-  argument: Argument
-  hasDropZone: false
+  text: string
 }
 
 export type WhileDo = NodeBase & {
   type: 'while-do'
-  argument: Argument
-  hasDropZone: true
+  text: string
+  child: Node
 }
 
 export type DoWhile = NodeBase & {
   type: 'do-while'
-  argument: Argument
-  hasDropZone: true
+  text: string
+  child: Node
 }
 
 export type IfElse = {
   type: 'if-else'
-  topCondition: string
-  arguments: Argument[]
-  hasDropZone: true
+  textCondition: string
+  childIf: Node
+  childElse: Node
 }
 
 export type SwitchCase = NodeBase & {
   type: 'switch-case'
-  topCondition: string
-  arguments: Argument[]
-  hasDropZone: true
+  textCondition: string
+  cases: Case[]
 }
 
 export type MethodBlock = NodeBase & {
   type: 'method-block'
-  argument: Argument
-  hasDropZone: false
+  text: string
 }
