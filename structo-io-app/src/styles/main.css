@@ -2,47 +2,32 @@ body {
   font-family: var(--ff-primary);
   font-size: var(--fs-200);
   font-weight: var(--fw-regular);
+  background-color: var(--app-background-color);
+  color: var(--color-text-active);
 }
 
-html:not(.dark) body {
-  background-color: var(--app-background-light);
-  color: var(--color-text-active-light);
-}
-
-html.dark body {
-  background-color: var(--app-background-dark);
-  color: var(--color-text-active-dark);
-}
 
 img[data-key='icon'] {
   height: var(--size-800);
   width: var(--size-800);
 }
 
-html:not(.dark) .canvas {
-  background-color: var(--editor-canvas-background-light);
-}
-html.dark .canvas {
-  background-color: var(--editor-canvas-background-dark);
-}
-
 html:not(.dark) .item-container,
 .item-childzone {
   border: 2px solid var(--color-text-active-light);
 }
-html.dark .item-childzone,
-.item-container {
-  border: 2px solid var(--color-text-active-dark);
+
+.item-childzone, .item-container{
+  border: 2px solid var(--color-text-active);
 }
-.item-childzone:hover {
+
+.item-childzone:hover{
   border: 2px solid var(--color-primary);
 }
 
-html:not(.dark) .item-argument-container[data-colored] {
-  border: 2px solid var(--color-text-active-light);
-}
-html.dark .item-argument-container[data-colored] {
-  border: 2px solid var(--color-text-active-dark);
+.item-argument-container[data-colored]{
+  border: 2px solid var(--color-text-active);
+
 }
 
 html:not(.dark) .triangle-background {
