@@ -3,13 +3,20 @@
     <div class="item-childzone">
       <div class="example-child"></div>
     </div>
-    <div class="item-argument"></div>
+    <div class="item-argument">
+      <BaseTextInputVue v-model:text="condition" />
+    </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import BaseTextInputVue from './BaseTextInput.vue'
+import { ref } from 'vue'
+
+const condition = ref('Condition')
+</script>
 <style scoped>
 .item-container {
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   min-width: var(--min-width-editor-item);
   height: fit-content;
   width: fit-content;
@@ -27,7 +34,7 @@
   align-self: flex-end;
   width: fit-content;
   min-width: 100%;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
 }
 .item-argument {
   min-height: var(--min-height-editor-argument);

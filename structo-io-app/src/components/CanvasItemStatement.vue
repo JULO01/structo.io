@@ -15,7 +15,7 @@
   padding-left: 1.5rem;
 }
 .item-statement {
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   border: 2px solid black;
   min-width: var(--min-width-editor-item);
   min-height: var(--min-height-editor-argument);

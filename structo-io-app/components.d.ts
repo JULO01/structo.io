@@ -14,6 +14,8 @@ declare module '@vue/runtime-core' {
     AppHeaderNav: typeof import('./src/components/AppHeaderNav.vue')['default']
     BaseEmptyContent: typeof import('./src/components/BaseEmptyContent.vue')['default']
     BaseIcon: typeof import('./src/components/BaseIcon.vue')['default']
+    BaseTextInput: typeof import('./src/components/BaseTextInput.vue')['default']
+    CanvasItemChildzone: typeof import('./src/components/CanvasItemChildzone.vue')['default']
     CanvasItemDoWhile: typeof import('./src/components/CanvasItemDoWhile.vue')['default']
     CanvasItemIfElse: typeof import('./src/components/CanvasItemIfElse.vue')['default']
     CanvasItemMethodBlock: typeof import('./src/components/CanvasItemMethodBlock.vue')['default']

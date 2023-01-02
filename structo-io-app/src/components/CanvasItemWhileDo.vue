@@ -9,7 +9,7 @@
 <script setup lang="ts"></script>
 <style scoped>
 .item-container {
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   min-width: var(--min-width-editor-item);
   height: fit-content;
   width: fit-content;
@@ -30,7 +30,7 @@
   width: fit-content;
   min-width: 100%;
   margin-top: auto;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
 }
 .item-argument {
   min-height: var(--min-height-editor-argument);

@@ -1,6 +1,4 @@
-export default {}
-
-type Node = Statement | WhileDo | DoWhile | IfElse | SwitchCase | MethodBlock
+export type Node = Statement | WhileDo | DoWhile | IfElse | SwitchCase | MethodBlock
 
 type Case = {
   caseText: string
