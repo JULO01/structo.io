@@ -2,24 +2,23 @@
   <div class="container">
     <div v-if="!isEditing" class="text-container" @click="handleTextClick">{{ text }}</div>
     <div v-else class="input-container">
-      <input v-model="text" type="text" />
-      <BaseIcon @click="isEditing = false" name="Check" size="30px" />
-      <BaseIcon @click="isEditing = false" name="Close" size="25px" />
+      <input @focusout="handleEnter" @keyup.enter="handleEnter" @keyup.escape="handleEscape" v-model="text" type="text" ref="textInput" class="text-input" />
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import BaseIcon from './BaseIcon.vue'
-import { ref, computed, defineEmits } from 'vue'
+import { ref, computed, defineEmits, nextTick } from 'vue'
 
 type Props = {
   text?: string
 }
 
-const isEditing = ref(false)
-
 const props = withDefaults(defineProps<Props>(), { text: '' })
 const emit = defineEmits(['update:text'])
+
+const isEditing = ref(false)
+const textInput = ref<HTMLElement>()
+let savedTextValue = new String(props.text)
 
 const text = computed({
   get() {
@@ -32,6 +31,23 @@ const text = computed({
 
 function handleTextClick() {
   isEditing.value = true
+  nextTick(() => {
+    if (!textInput.value) return
+    textInput.value.focus()
+  })
+}
+
+function handleEnter() {
+  isEditing.value = false
+  if (text.value == '') {
+    text.value = 'Condition'
+  }
+  savedTextValue = new String(text.value)
+}
+
+function handleEscape() {
+  isEditing.value = false
+  text.value = savedTextValue.toString()
 }
 </script>
 <style scoped>
@@ -46,5 +62,17 @@ function handleTextClick() {
 
 .container {
   font-size: var(--fs-400);
+}
+
+.text-input {
+  border: 2px solid var(--color-primary);
+  outline: 0;
+  border-radius: 0.3rem;
+  transition: transform 0.2s ease;
+  box-shadow: var(--box-shadow-100);
+}
+.text-input:focus {
+  border: 2px solid var(--color-primary);
+  outline: 0 !important;
 }
 </style>
