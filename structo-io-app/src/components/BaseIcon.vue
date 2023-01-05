@@ -3,10 +3,16 @@
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, computed } from 'vue'
+
 type Props = { name: string; size: string; color?: string }
 
 const props = defineProps<Props>()
+
+const color = computed(() => {
+  if (!props.color) return 'var(--color-text-active'
+  return props.color
+})
 
 const iconRoutes = import.meta.glob('../assets/icons/*.vue')
 const iconComponents: Record<string, unknown> = {}
@@ -21,12 +27,6 @@ Object.keys(iconRoutes).forEach((key) => {
 <style scoped>
 .icon {
   cursor: pointer;
-}
-
-html:not(.dark) .icon {
-  fill: var(--color-text-active-light);
-}
-html.dark .icon {
-  fill: var(--color-text-active-dark);
+  fill: v-bind(color);
 }
 </style>
