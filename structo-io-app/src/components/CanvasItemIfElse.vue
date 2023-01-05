@@ -6,13 +6,13 @@
     </div>
     <div class="item-argument-container triangle-background" data-colored="true">
       <div class="item-argument-if-display">
-        <BaseTextInputVue class="if-input" v-model="ifStatement" />
+        <BaseTextInputVue v-model:text="ifStatement" />
       </div>
       <div class="item-argument">
-        <BaseTextInputVue v-model="conditionStatement" />
+        <BaseTextInputVue class="if-input" v-model:text="conditionStatement" />
       </div>
       <div class="item-argument-else-display">
-        <BaseTextInputVue class="if-input" v-model="elseStatement" />
+        <BaseTextInputVue v-model:text="elseStatement" />
       </div>
     </div>
     <div class="item-childzone-container">
@@ -230,7 +230,9 @@ html.dark .item-childzone-if::after {
   border: 1px solid cyan;
 }
 .if-input {
-  position: absolute;
+  /* position: absolute;*/
+  margin-top: 1rem;
+  padding-bottom: 6rem;
 }
 .background-overlay {
   position: fixed;

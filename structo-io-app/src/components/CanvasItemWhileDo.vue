@@ -1,12 +1,19 @@
 <template>
   <div class="item-container">
-    <div class="item-argument"></div>
+    <div class="item-argument">
+      <BaseTextInput v-model:text="argumentText" />
+    </div>
     <div class="item-childzone">
       <div class="example-child"></div>
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+import BaseTextInput from './BaseTextInput.vue'
+
+const argumentText = ref('Condition')
+</script>
 <style scoped>
 .item-container {
   /*border-radius: 10px;*/
