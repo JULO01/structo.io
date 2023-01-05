@@ -1,14 +1,18 @@
 <template>
-  <div class="item-container">
+  <div class="background-overlay" v-show="elementIsHovered"></div>
+  <div class="item-container" @mouseover="elementIsHovered = true" @mouseleave="elementIsHovered = false">
+    <div class="edit-icons-container" v-show="elementIsHovered">
+      <BaseIcon name="trash" size="30px" color="var(--editor-canvas-background-light)" />
+    </div>
     <div class="item-argument-container triangle-background" data-colored="true">
       <div class="item-argument-if-display">
-        <BaseTextInputVue class="if-input" v-model:text="ifStatement" />
+        <BaseTextInputVue class="if-input" v-model="ifStatement" />
       </div>
       <div class="item-argument">
-        <BaseTextInputVue v-model:text="conditionStatement" />
+        <BaseTextInputVue v-model="conditionStatement" />
       </div>
       <div class="item-argument-else-display">
-        <BaseTextInputVue class="if-input" v-model:text="elseStatement" />
+        <BaseTextInputVue class="if-input" v-model="elseStatement" />
       </div>
     </div>
     <div class="item-childzone-container">
@@ -57,6 +61,7 @@ import CanvasItemSwitchCase from './CanvasItemSwitchCase.vue'
 import CanvasItemWhileDo from './CanvasItemWhileDo.vue'
 import CanvasItemIfElse from './CanvasItemIfElse.vue'
 import BaseTextInputVue from './BaseTextInput.vue'
+import BaseIcon from './BaseIcon.vue'
 
 const store = useGlobalStore()
 
@@ -76,6 +81,7 @@ const conditionStatement = ref('Condition')
 const ifChildType = ref<NodeType>()
 const elseChildType = ref<NodeType>()
 const afterChildType = ref<NodeType>()
+const elementIsHovered = ref(false)
 
 const requiredIfComponent = computed(() => {
   if (!ifChildType.value) return null
@@ -158,12 +164,19 @@ function handleDragLeave(event: DragEvent) {
 }
 .item-container {
   /*border-radius: 10px;*/
+  position: relative;
+  background-color: var(--editor-canvas-background);
   min-width: var(--min-width-editor-item);
   height: fit-content;
   width: fit-content;
 
   display: flex;
   flex-direction: column;
+  transition: all 0.2s ease;
+}
+.item-container:hover {
+  z-index: 2;
+  transform: scale(1.1, 1.1);
 }
 .item-childzone-container {
   min-height: var(--min-height-editor-childzone);
@@ -218,5 +231,20 @@ html.dark .item-childzone-if::after {
 }
 .if-input {
   position: absolute;
+}
+.background-overlay {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.edit-icons-container {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
 }
 </style>
