@@ -39,7 +39,7 @@ onMounted(() => {
 .case-triangle {
   background-image: url('data:image/svg+xml;charset=UTF-8, <svg preserveAspectRatio="none" viewBox="0 0 331 102" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="332" y2="101.146" stroke="rgb(35, 35, 35)" stroke-width="2"/></svg>');
   background-size: 100% 100%;
-  background-color: rgb(var(--editor-canvas-background-light));
+  background-color: rgb(var(--editor-canvas-background));
   display: flex;
 }
 .else-triangle {
@@ -51,7 +51,6 @@ onMounted(() => {
 .item-container {
   min-height: var(--min-height-editor-item);
   min-width: var(--min-width-editor-item);
-  /*  grid-template-rows: var(--switch-case-upper-row-height) auto; */
   grid-template-rows: 10rem auto;
   position: relative;
   display: grid;
@@ -102,13 +101,11 @@ onMounted(() => {
   --items-length: v-bind(lengthOfItems);
   content: '';
   position: absolute;
-  border-left: 2px solid var(--color-text-active-light);
+  border-left: 2px solid var(--color-text-active);
   bottom: 100%;
   height: calc(var(--switch-case-upper-row-height) * var(--item-divider-proportion) / var(--items-length));
   height: calc(10rem * var(--item-divider-proportion) / var(--items-length));
   overflow-y: hidden;
-}
-.example-statement {
 }
 .example-child {
   background-color: red;

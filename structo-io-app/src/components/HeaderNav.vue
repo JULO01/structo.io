@@ -32,20 +32,13 @@ const emit = defineEmits(['update:navIndex'])
 .nav-item-active {
   font-weight: var(--fw-medium);
   font-size: var(--fs-header-nav-item-active);
-  color: var(--color-text-active-light);
+  color: var(--color-text-active);
   display: block;
 }
 .nav-item-inactive {
   font-weight: var(--fw-regular);
   font-size: var(--fs-header-nav-item-inactive);
-  color: var(--color-text-inactive-light);
-}
-.dark .nav-item-active {
-  color: var(--color-text-active-dark);
-}
-
-.dark .nav-item-inactive {
-  color: var(--color-text-inactive-dark);
+  color: var(--color-text-inactive);
 }
 
 .active-item-underline {
